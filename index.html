@@ -1,112 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tarun's Hub - Web Applications & Tools</title>
-    
-    <!-- Google AdSense Verification Code -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7743006192348662" crossorigin="anonymous"></script>
+    <title>Tarun Dev | Central Projects Hub</title>
 
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #121212;
-            color: #ffffff;
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
-        }
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
-        header {
-            text-align: center;
-            padding-bottom: 30px;
-            border-bottom: 1px solid #333;
-            margin-bottom: 40px;
-        }
-        h1 {
-            color: #4CAF50;
-            margin-bottom: 10px;
-        }
-        .project-card {
-            background-color: #1e1e1e;
-            padding: 25px;
-            border-radius: 10px;
-            margin-bottom: 25px;
-            border: 1px solid #333;
-        }
-        .project-card h2 {
-            margin-top: 0;
-            color: #fff;
-        }
-        .project-card p {
-            color: #aaaaaa;
-            margin-bottom: 20px;
-        }
-        .btn {
-            display: inline-block;
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-        }
-        .btn:hover {
-            background-color: #45a049;
-        }
-        footer {
-            text-align: center;
-            margin-top: 50px;
-            padding-top: 20px;
-            border-top: 1px solid #333;
-            font-size: 0.9rem;
-        }
-        footer a {
-            color: #4CAF50;
-            text-decoration: none;
-            margin: 0 10px;
-        }
-    </style>
+    <!-- Google AdSense Verification Code (DO NOT REMOVE) -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7743006192348662"
+        crossorigin="anonymous"></script>
+
+    <!-- External CSS file link -->
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-    <div class="container">
-        <header>
-            <h1>Tarun's Projects Hub</h1>
-            <p>Welcome to my central repository of web applications, productivity tools, and health calculators.</p>
-        </header>
+    <!-- NAVBAR START -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="brand-logo">Tarun<span>Dev</span></a>
 
-        <!-- Project 1: Eye Break -->
-        <div class="project-card">
-            <h2>Eye Rest - Smart 20-20-20 Rule</h2>
-            <p>A comprehensive productivity and eye-care application designed for developers and gamers. It enforces the scientifically proven 20-20-20 rule to reduce digital eye strain during long screen sessions.</p>
-            <a href="/Vibe-Coding/Eye-Break/" class="btn">Launch Eye Rest App</a>
-        </div>
+            <div class="nav-links">
+                <a href="#about" class="nav-item">About</a>
+                <a href="#projects" class="nav-item">Tools</a>
 
-        <!-- Project 2: Health Calculators -->
-        <div class="project-card">
-            <h2>Advanced Health Calculators</h2>
-            <p>A suite of dynamic health management tools. Includes precise Body Mass Index (BMI) and U.S. Navy standard Body Fat calculators with real-time dynamic inputs based on gender and body metrics.</p>
-            <a href="/Vibe-Coding/Health-Calculators/" class="btn">Launch Health Calculators</a>
-        </div>
-
-        <!-- Footer with Trust Pages -->
-        <footer>
-            <p>&copy; 2026 Tarun Dev. All rights reserved.</p>
-            <div style="margin-top: 15px;">
-                <!-- Dhyan de: Ye links tere Eye-Break wale trust pages ko point kar rahe hain -->
-                <a href="/Vibe-Coding/Eye-Break/about-us.html">About Us</a> | 
-                <a href="/Vibe-Coding/Eye-Break/contact-us.html">Contact Us</a> | 
-                <a href="/Vibe-Coding/Eye-Break/privacy-policy.html">Privacy Policy</a> | 
-                <a href="/Vibe-Coding/Eye-Break/terms-and-conditions.html">Terms of Service</a>
+                <!-- Theme Toggle Button -->
+                <button id="theme-toggle" class="theme-btn" aria-label="Toggle Dark Mode">
+                    <span id="theme-icon">🌙</span>
+                </button>
             </div>
-        </footer>
-    </div>
+        </div>
+    </nav>
+    <!-- NAVBAR END -->
 
+    <!-- Main Content Area (Khali chhod de abhi ke liye) -->
+    <main>
+        <!-- HERO / ABOUT SECTION -->
+        <section id="about" class="hero-section">
+            <div class="hero-container">
+                <h1 class="hero-title">Engineering Practical <span class="highlight">Web Utilities</span></h1>
+
+                <p class="hero-subtitle">
+                    Welcome to my central tools repository. As a frontend developer, I focus on building lightweight,
+                    performance-optimized web applications designed to solve everyday problems and streamline digital
+                    workflows.
+                </p>
+
+                <p class="hero-description">
+                    Every project and utility hosted in this directory is engineered with a strict mobile-first
+                    approach. Regardless of the application's complexity, my core development philosophy remains
+                    consistent: ensuring lightning-fast load times, semantic architecture, and clean, ad-friendly user
+                    interfaces.
+                </p>
+
+                <div class="hero-actions">
+                    <a href="#projects" class="btn btn-primary">Explore Tools</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJECTS SECTION -->
+        <section id="projects" class="projects-section">
+            <div class="projects-container">
+                <div class="section-header">
+                    <h2 class="section-title">// Live Utilities</h2>
+                    <p class="section-subtitle">Performance-tested tools built for daily use.</p>
+                </div>
+
+                <div class="projects-grid">
+
+                    <!-- Card 1: Eye Rest -->
+                    <div class="floating-card delay-1">
+                        <div class="card-status"><span class="pulse"></span> LIVE PROJECT</div>
+                        <h3 class="card-title">Eye Rest Monitor</h3>
+                        <p class="card-text">
+                            A focused digital wellbeing application enforcing the 20-20-20 rule. Features customizable
+                            timers, discrete notification intervals, and audio alerts to prevent screen-induced eye
+                            strain.
+                        </p>
+                        <a href="https://7-tarun.github.io/Vibe-Coding/Eye-Break/" class="card-link">Launch Tool
+                            &rarr;</a>
+                    </div>
+
+                    <!-- Card 2: Health Calculators -->
+                    <div class="floating-card delay-2">
+                        <div class="card-status"><span class="pulse"></span> LIVE PROJECT</div>
+                        <h3 class="card-title">Advanced HealthCalc</h3>
+                        <p class="card-text">
+                            A strict, demographic-aware fitness tracking suite. Includes a dynamic Body Mass Index (BMI)
+                            engine and a U.S. Navy standard Body Fat calculator with adaptive input fields.
+                        </p>
+                        <a href="https://7-tarun.github.io/Vibe-Coding/Health-Calculators/" class="card-link">Launch
+                            Tool &rarr;</a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER AREA (Strictly for AdSense Compliance) -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-links">
+                <a href="about.html">About</a>
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Service</a>
+            </div>
+
+            <div class="footer-info">
+                <p>&copy; 2026 Tarun Dev. All rights reserved.</p>
+                <p>Contact: <span id="secure-email">Loading...</span></p>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- External JS file link -->
+    <script src="script.js"></script>
 </body>
+
 </html>

@@ -1,0 +1,401 @@
+/* =========================================
+   1. ROOT VARIABLES (Color Palette)
+   ========================================= */
+:root {
+    /* Light Theme (Default) */
+    --bg-color: #FAFAFA;
+    --surface-color: #FFFFFF;
+    --text-main: #1E293B;
+    --text-muted: #64748B;
+    --accent: #8B5CF6;       /* Electric Purple */
+    --accent-hover: #7C3AED;
+    --border-color: #E2E8F0;
+    --shadow-subtle: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+/* Jab body par .dark-mode class lagegi, ye variables activate honge */
+body.dark-mode {
+    --bg-color: #0F172A;
+    --surface-color: #1E293B;
+    --text-main: #F8FAFC;
+    --text-muted: #94A3B8;
+    --accent: #A855F7;       /* Glowing Electric Purple */
+    --accent-hover: #D8B4FE;
+    --border-color: #334155;
+    --shadow-subtle: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+}
+
+/* =========================================
+   2. BASE RESET & TYPOGRAPHY
+   ========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth Theme Transition */
+    line-height: 1.6;
+}
+
+/* Smooth scroll for anchor links */
+html {
+    scroll-behavior: smooth;
+}
+
+/* =========================================
+   3. NAVBAR STYLING (Mobile-First)
+   ========================================= */
+.navbar {
+    background-color: var(--surface-color);
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: var(--shadow-subtle);
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.nav-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand-logo {
+    font-size: 1.4rem;
+    font-weight: 800;
+    text-decoration: none;
+    color: var(--text-main);
+    letter-spacing: -0.5px;
+}
+
+.brand-logo span {
+    color: var(--accent);
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Mobile par thoda kam gap */
+}
+
+.nav-item {
+    text-decoration: none;
+    color: var(--text-main);
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: color 0.2s ease;
+}
+
+.nav-item:hover {
+    color: var(--accent);
+}
+
+/* Theme Toggle Button */
+.theme-btn {
+    background: none;
+    border: 2px solid var(--border-color);
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 1.1rem;
+    color: var(--text-main);
+    transition: all 0.3s ease;
+}
+
+.theme-btn:hover {
+    border-color: var(--accent);
+    transform: scale(1.1); /* Satisfying interaction */
+}
+
+/* =========================================
+   5. HERO / ABOUT SECTION
+   ========================================= */
+.hero-section {
+    padding: 80px 20px 60px;
+    text-align: center;
+}
+
+.hero-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero-title {
+    font-size: 2.8rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    color: var(--text-main);
+    letter-spacing: -1px;
+}
+
+/* Glowing text highlight for electric accent */
+.highlight {
+    color: var(--accent);
+}
+
+.hero-subtitle {
+    font-size: 1.15rem;
+    color: var(--text-muted);
+    margin-bottom: 15px;
+    line-height: 1.7;
+}
+
+.hero-description {
+    font-size: 1rem;
+    color: var(--text-muted);
+    margin-bottom: 35px;
+    line-height: 1.6;
+}
+
+/* Global Button Styles */
+.btn {
+    display: inline-block;
+    padding: 12px 28px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+/* Primary Accent Button with satisfying hover lift & glow */
+.btn-primary {
+    background-color: var(--accent);
+    color: #ffffff; /* Always white text on accent background */
+    box-shadow: 0 4px 14px 0 rgba(139, 92, 246, 0.3);
+}
+
+.btn-primary:hover {
+    background-color: var(--accent-hover);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(139, 92, 246, 0.4);
+}
+
+
+/* =========================================
+   6. PROJECTS GRID & 3D FLOATING CARDS (REFINED)
+   ========================================= */
+.projects-section {
+    padding: 60px 20px 100px;
+}
+
+.projects-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.section-header {
+    margin-bottom: 40px;
+}
+
+.section-title {
+    font-size: 1.8rem;
+    color: var(--text-main);
+    font-family: monospace;
+    letter-spacing: -0.5px;
+}
+
+.section-subtitle {
+    color: var(--text-muted);
+    font-size: 1rem;
+    margin-top: 5px;
+}
+
+/* Adjusted min-width from 320px to 280px to fix bulky feeling */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+/* Base Card Structure */
+.floating-card {
+    background-color: var(--surface-color);
+    /* Default subtle neon border glow matching your reference */
+    border: 1px solid rgba(139, 92, 246, 0.3); 
+    border-radius: 12px;
+    padding: 25px; /* Reduced from 30px to make it sleeker */
+    position: relative;
+    z-index: 1;
+    
+    /* Flexbox magic to pin the button strictly to the bottom */
+    display: flex;
+    flex-direction: column;
+
+    /* Hardware acceleration */
+    transform-style: preserve-3d;
+    will-change: transform, box-shadow;
+    
+    /* Faster Breathing Animation: 3.5 seconds */
+    animation: breathe 3.5s ease-in-out infinite;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+    /* Default subtle box glow */
+    box-shadow: 0 4px 15px rgba(139, 92, 246, 0.08), 
+                inset 0 0 10px rgba(139, 92, 246, 0.05);
+}
+
+.delay-1 { animation-delay: 0s; }
+.delay-2 { animation-delay: 1.2s; }
+
+/* Tighter keyframes for faster, non-jittery breathing */
+@keyframes breathe {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+}
+
+/* Hover: Pop-up & Intense Neon Glow */
+.floating-card:hover {
+    animation-play-state: paused; 
+    transform: translateY(-10px) scale(1.02); /* Card pops up */
+    border-color: var(--accent);
+    /* Intense outer and inner neon glow */
+    box-shadow: 0 15px 35px -5px rgba(139, 92, 246, 0.4), 
+                inset 0 0 20px -5px rgba(139, 92, 246, 0.2);
+    z-index: 2;
+}
+
+/* Internal Card Styling */
+.card-status {
+    font-size: 0.75rem;
+    font-weight: 700;
+    font-family: monospace;
+    color: var(--accent);
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    letter-spacing: 1px;
+}
+
+.pulse {
+    width: 8px;
+    height: 8px;
+    background-color: var(--accent);
+    border-radius: 50%;
+    animation: pulse-glow 2s infinite;
+}
+
+@keyframes pulse-glow {
+    0% { box-shadow: 0 0 0 0 rgba(139, 92, 246, 0.7); }
+    70% { box-shadow: 0 0 0 6px rgba(139, 92, 246, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(139, 92, 246, 0); }
+}
+
+.card-title {
+    font-size: 1.5rem;
+    color: var(--text-main);
+    margin-bottom: 12px;
+}
+
+/* flex-grow: 1 takes up all empty space, pushing the link down */
+.card-text {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 25px;
+    flex-grow: 1; 
+}
+
+.card-link {
+    display: inline-block;
+    text-decoration: none;
+    color: var(--accent);
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: color 0.3s;
+    align-self: flex-start; /* Keeps the button from stretching across the bottom */
+}
+
+.card-link:hover {
+    color: var(--accent-hover);
+    text-shadow: 0 0 8px rgba(139, 92, 246, 0.4);
+}
+
+
+/* =========================================
+   7. FOOTER & TRUST LINKS 
+   ========================================= */
+.site-footer {
+    border-top: 1px solid var(--border-color);
+    padding: 40px 20px;
+    text-align: center;
+    background-color: var(--bg-color);
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.footer-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.footer-links {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+.footer-links a {
+    color: var(--text-main);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+    color: var(--accent);
+}
+
+.footer-info p {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    margin-bottom: 5px;
+}
+
+.secure-link {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.secure-link:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================================
+   4. DESKTOP MEDIA QUERY
+   ========================================= */
+@media (min-width: 768px) {
+    .nav-container {
+        padding: 15px 40px;
+    }
+    .nav-links {
+        gap: 30px; /* Badi screen par links fail jayenge */
+    }
+    .hero-title {
+        font-size: 3.5rem;
+    }
+    .hero-section {
+        padding: 100px 20px 80px;
+    }
+}
