@@ -127,11 +127,37 @@ html {
 .hero-section {
     padding: 80px 20px 60px;
     text-align: center;
+    position: relative;
+}
+
+.hero-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at top, rgba(139, 92, 246, 0.12), transparent 60%);
+    pointer-events: none;
 }
 
 .hero-container {
     max-width: 800px;
     margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 14px;
+    border: 1px solid rgba(139, 92, 246, 0.25);
+    border-radius: 999px;
+    background: rgba(139, 92, 246, 0.08);
+    color: var(--accent);
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    margin-bottom: 20px;
 }
 
 .hero-title {
@@ -175,15 +201,15 @@ html {
 
 /* Primary Accent Button with satisfying hover lift & glow */
 .btn-primary {
-    background-color: var(--accent);
+    background: linear-gradient(135deg, var(--accent), #7C3AED);
     color: #ffffff; /* Always white text on accent background */
-    box-shadow: 0 4px 14px 0 rgba(139, 92, 246, 0.3);
+    box-shadow: 0 8px 20px rgba(139, 92, 246, 0.25);
 }
 
 .btn-primary:hover {
-    background-color: var(--accent-hover);
+    background: linear-gradient(135deg, var(--accent-hover), #9333EA);
     transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(139, 92, 246, 0.4);
+    box-shadow: 0 10px 24px rgba(139, 92, 246, 0.32);
 }
 
 
@@ -226,28 +252,31 @@ html {
 /* Base Card Structure */
 .floating-card {
     background-color: var(--surface-color);
-    /* Default subtle neon border glow matching your reference */
-    border: 1px solid rgba(139, 92, 246, 0.3); 
-    border-radius: 12px;
-    padding: 25px; /* Reduced from 30px to make it sleeker */
+    border: 1px solid rgba(139, 92, 246, 0.22); 
+    border-radius: 16px;
+    padding: 25px;
     position: relative;
     z-index: 1;
+    overflow: hidden;
     
-    /* Flexbox magic to pin the button strictly to the bottom */
     display: flex;
     flex-direction: column;
 
-    /* Hardware acceleration */
     transform-style: preserve-3d;
     will-change: transform, box-shadow;
     
-    /* Faster Breathing Animation: 3.5 seconds */
     animation: breathe 3.5s ease-in-out infinite;
     transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
-    /* Default subtle box glow */
-    box-shadow: 0 4px 15px rgba(139, 92, 246, 0.08), 
-                inset 0 0 10px rgba(139, 92, 246, 0.05);
+    box-shadow: 0 10px 25px rgba(15, 23, 42, 0.04);
+}
+
+.floating-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.08), transparent 70%);
+    pointer-events: none;
 }
 
 .delay-1 { animation-delay: 0s; }
@@ -262,11 +291,9 @@ html {
 /* Hover: Pop-up & Intense Neon Glow */
 .floating-card:hover {
     animation-play-state: paused; 
-    transform: translateY(-10px) scale(1.02); /* Card pops up */
+    transform: translateY(-8px) scale(1.01);
     border-color: var(--accent);
-    /* Intense outer and inner neon glow */
-    box-shadow: 0 15px 35px -5px rgba(139, 92, 246, 0.4), 
-                inset 0 0 20px -5px rgba(139, 92, 246, 0.2);
+    box-shadow: 0 20px 35px -8px rgba(139, 92, 246, 0.25);
     z-index: 2;
 }
 
