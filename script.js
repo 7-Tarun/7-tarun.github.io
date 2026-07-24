@@ -14,6 +14,10 @@ if (currentTheme === 'dark') {
     }
 }
 
+if (themeToggleBtn) {
+    themeToggleBtn.style.setProperty('--toggle-rotation', '0deg');
+}
+
 // Toggle Event Listener
 if (themeToggleBtn) {
     themeToggleBtn.addEventListener('click', () => {
@@ -24,20 +28,18 @@ if (themeToggleBtn) {
             if (themeIcon) {
                 themeIcon.textContent = '☀️';
             }
-            themeToggleBtn.style.transform = 'rotate(180deg)';
-            setTimeout(() => {
-                themeToggleBtn.style.transform = 'none';
-            }, 300);
+            themeToggleBtn.style.setProperty('--toggle-rotation', '180deg');
         } else {
             localStorage.setItem('theme', 'light');
             if (themeIcon) {
                 themeIcon.textContent = '🌙';
             }
-            themeToggleBtn.style.transform = 'rotate(-180deg)';
-            setTimeout(() => {
-                themeToggleBtn.style.transform = 'none';
-            }, 300);
+            themeToggleBtn.style.setProperty('--toggle-rotation', '-180deg');
         }
+
+        setTimeout(() => {
+            themeToggleBtn.style.setProperty('--toggle-rotation', '0deg');
+        }, 320);
     });
 }
 
