@@ -87,6 +87,7 @@ body.dark-mode .navbar {
     display: inline-flex;
     align-items: center;
     gap: 0.15rem;
+    transition: opacity 0.15s ease, transform 0.15s ease;
 }
 
 .brand-logo span {
@@ -109,15 +110,6 @@ body.dark-mode .navbar {
     transition: all 0.2s ease;
 }
 
-.nav-item:hover {
-    color: var(--accent);
-    background: rgba(139, 92, 246, 0.08);
-}
-
-body.dark-mode .nav-item:hover {
-    color: var(--accent-hover);
-    background: rgba(168, 85, 247, 0.14);
-}
 
 /* Theme Toggle Button */
 .theme-btn {
@@ -140,11 +132,6 @@ body.dark-mode .nav-item:hover {
 body.dark-mode .theme-btn {
     background: linear-gradient(135deg, rgba(168, 85, 247, 0.22), rgba(30, 41, 59, 0.95));
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08), 0 4px 12px rgba(2, 6, 23, 0.24);
-}
-
-.theme-btn:hover {
-    border-color: var(--accent);
-    transform: rotate(var(--toggle-rotation, 0deg)) scale(1.08);
 }
 
 @media (min-width: 768px) {
@@ -247,12 +234,6 @@ body.dark-mode .theme-btn {
     box-shadow: 0 8px 20px rgba(139, 92, 246, 0.25);
 }
 
-.btn-primary:hover {
-    background: linear-gradient(135deg, var(--accent-hover), #9333EA);
-    transform: translateY(-3px);
-    box-shadow: 0 10px 24px rgba(139, 92, 246, 0.32);
-}
-
 
 /* =========================================
    6. PROJECTS GRID & 3D FLOATING CARDS (REFINED)
@@ -329,15 +310,6 @@ body.dark-mode .theme-btn {
     50% { transform: translateY(-6px); }
 }
 
-/* Hover: Pop-up & Intense Neon Glow */
-.floating-card:hover {
-    animation-play-state: paused; 
-    transform: translateY(-8px) scale(1.01);
-    border-color: var(--accent);
-    box-shadow: 0 20px 35px -8px rgba(139, 92, 246, 0.25);
-    z-index: 2;
-}
-
 /* Internal Card Styling */
 .card-status {
     font-size: 0.75rem;
@@ -388,13 +360,8 @@ body.dark-mode .theme-btn {
     font-size: 0.9rem;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    transition: color 0.3s;
+    transition: color 0.3s, transform 0.15s ease;
     align-self: flex-start; /* Keeps the button from stretching across the bottom */
-}
-
-.card-link:hover {
-    color: var(--accent-hover);
-    text-shadow: 0 0 8px rgba(139, 92, 246, 0.4);
 }
 
 
@@ -427,11 +394,7 @@ body.dark-mode .theme-btn {
     text-decoration: none;
     font-size: 0.9rem;
     font-weight: 600;
-    transition: color 0.2s ease;
-}
-
-.footer-links a:hover {
-    color: var(--accent);
+    transition: color 0.2s ease, transform 0.15s ease;
 }
 
 .footer-info p {
@@ -444,10 +407,6 @@ body.dark-mode .theme-btn {
     color: var(--accent);
     text-decoration: none;
     font-weight: 600;
-}
-
-.secure-link:hover {
-    text-decoration: underline;
 }
 
 
@@ -466,5 +425,137 @@ body.dark-mode .theme-btn {
     }
     .hero-section {
         padding: 100px 20px 80px;
+    }
+}
+
+/* =========================================
+   8. DESKTOP HOVER (mouse / fine pointer)
+   ========================================= */
+@media (hover: hover) and (pointer: fine) {
+    .nav-item:hover {
+        color: var(--accent);
+        background: rgba(139, 92, 246, 0.08);
+    }
+
+    body.dark-mode .nav-item:hover {
+        color: var(--accent-hover);
+        background: rgba(168, 85, 247, 0.14);
+    }
+
+    .theme-btn:hover {
+        border-color: var(--accent);
+        transform: rotate(var(--toggle-rotation, 0deg)) scale(1.08);
+    }
+
+    .btn-primary:hover {
+        background: linear-gradient(135deg, var(--accent-hover), #9333EA);
+        transform: translateY(-3px);
+        box-shadow: 0 10px 24px rgba(139, 92, 246, 0.32);
+    }
+
+    .floating-card:hover {
+        animation-play-state: paused;
+        transform: translateY(-8px) scale(1.01);
+        border-color: var(--accent);
+        box-shadow: 0 20px 35px -8px rgba(139, 92, 246, 0.25);
+        z-index: 2;
+    }
+
+    .card-link:hover {
+        color: var(--accent-hover);
+        text-shadow: 0 0 8px rgba(139, 92, 246, 0.4);
+    }
+
+    .footer-links a:hover {
+        color: var(--accent);
+    }
+
+    .secure-link:hover {
+        text-decoration: underline;
+    }
+}
+
+/* =========================================
+   9. MOBILE / TOUCH TAP FEEDBACK
+   ========================================= */
+@media (hover: none), (pointer: coarse) {
+    .brand-logo:active {
+        opacity: 0.75;
+        transform: scale(0.98);
+    }
+
+    .nav-item:active {
+        color: var(--accent);
+        background: rgba(139, 92, 246, 0.16);
+        transform: scale(0.96);
+    }
+
+    body.dark-mode .nav-item:active {
+        color: var(--accent-hover);
+        background: rgba(168, 85, 247, 0.22);
+    }
+
+    .theme-btn:active {
+        border-color: var(--accent);
+        transform: rotate(var(--toggle-rotation, 0deg)) scale(0.9);
+        box-shadow: 0 2px 8px rgba(139, 92, 246, 0.25);
+    }
+
+    .btn-primary:active {
+        transform: scale(0.96);
+        box-shadow: 0 4px 12px rgba(139, 92, 246, 0.35);
+    }
+
+    .floating-card:active {
+        animation-play-state: paused;
+        transform: scale(0.98);
+        border-color: var(--accent);
+        box-shadow: 0 12px 24px -6px rgba(139, 92, 246, 0.28);
+    }
+
+    .card-link:active {
+        color: var(--accent-hover);
+        transform: translateX(4px);
+    }
+
+    .footer-links a:active {
+        color: var(--accent);
+        transform: scale(0.97);
+    }
+
+    .secure-link:active {
+        color: var(--accent-hover);
+        text-decoration: underline;
+        opacity: 0.85;
+    }
+}
+
+@media (max-width: 767px) {
+    .hero-title {
+        font-size: clamp(2rem, 8vw, 2.8rem);
+    }
+
+    .hero-section {
+        padding: 56px 16px 48px;
+    }
+
+    .projects-section {
+        padding: 48px 16px 72px;
+    }
+
+    .projects-grid {
+        gap: 20px;
+    }
+
+    .floating-card {
+        padding: 20px;
+    }
+
+    .nav-container {
+        padding: 12px 16px;
+    }
+
+    .footer-links {
+        gap: 16px;
     }
 }

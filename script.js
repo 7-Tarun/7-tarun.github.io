@@ -1,3 +1,6 @@
+// Enable :active styles on iOS Safari
+document.addEventListener('touchstart', () => {}, { passive: true });
+
 // DOM Elements
 const themeToggleBtn = document.getElementById('theme-toggle');
 const themeIcon = document.getElementById('theme-icon');
